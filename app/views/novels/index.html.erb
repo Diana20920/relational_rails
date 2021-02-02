@@ -1,1 +1,6 @@
 <h1>Novels</h1>
+<a href="/novels/new">New Novel</a>
+
+<% @novels.each do |novel| %>
+  <h3><%= novel %></h3>
+  <% end %>

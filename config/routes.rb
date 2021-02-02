@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   get '/', to: 'welcome#index'
   get '/novels', to: 'novels#index'
   get '/libraries', to: 'libraries#index'
+  get '/novels/new', to: 'novels#new'
+  get '/libraries/new', to: 'libraries#new'
 end
