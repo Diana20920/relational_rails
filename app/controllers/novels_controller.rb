@@ -41,4 +41,9 @@ class NovelsController < ApplicationController
       novel.save
       redirect_to "/novels/#{novel.id}"
   end
+
+  def destroy
+    Novel.destroy(params[:id])
+    redirect_to '/novels'
+  end
 end

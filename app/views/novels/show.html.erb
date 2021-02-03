@@ -15,4 +15,10 @@
   <p><%= @novel.updated_at %></p>
 </div>
 
-<a href="/novels/<%= @novel.id %>/edit">Update Novel</a>
+<a href="/novels/<%= @novel.id %>/edit">Update Novel</a><br><br>
+
+<form action="/novels/<%= @novel.id %>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete Novel"/>
+</form>
