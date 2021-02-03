@@ -2,15 +2,15 @@
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <p>Enter a new Novel:</p>
   <p>Title:</p>
-  <input type='text' name='novel[name]'/>
+  <input type='text' name='novel[title]'/>
   <p>Author:</p>
   <input type='text' name='novel[author]'/>
 
   <p>Hard Cover?</p>
   <label for="yes">Yes</label>
-  <input type="radio" name="novel[hard_cover?]" id="yes" value=true><br>
+  <input type="radio" name="novel[hard_cover]" id="yes" value=true><br>
   <label for="no">No</label>
-  <input type="radio" name="novel[hard_cover?]" id="no" value=false><br>
+  <input type="radio" name="novel[hard_cover]" id="no" value=false><br>
 
   <p>Number of Chapters:</p>
   <input type='number' name='novel[number_of_chapters]'/>

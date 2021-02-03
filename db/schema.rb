@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_02_234511) do
+ActiveRecord::Schema.define(version: 2021_02_03_005412) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(version: 2021_02_02_234511) do
     t.string "name"
     t.boolean "online_membership"
     t.integer "current_employees"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "novels", force: :cascade do |t|
+    t.string "title"
+    t.string "author"
+    t.boolean "hard_cover"
+    t.integer "number_of_chapters"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
