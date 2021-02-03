@@ -1,0 +1,23 @@
+<form action="/novels/<%= @novel.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="PATCH" />
+  <h1>Edit Novel</h1>
+  <p>Title:</p>
+  <input type='text' name='novel[title]' value="<%= @novel.title %>"/>
+  <p>Author:</p>
+  <input type='text' name='novel[author]' value="<%= @novel.author %>"/>
+
+  <p>Hard Cover?</p>
+  <label for="yes">Yes</label>
+  <input type="radio" name="novel[hard_cover]" id="yes" value=true><br>
+  <label for="no">No</label>
+  <input type="radio" name="novel[hard_cover]" id="no" value=false><br>
+
+  <p>Number of Chapters:</p>
+  <input type='number' name='novel[number_of_chapters]' value="<%= @novel.number_of_chapters %>"/>
+  <p>Written date:</p>
+  <input type='date' name='novel[created_at]' value="<%= @novel.created_at %>"/>
+  <p>Revised date:</p>
+  <input type='date' name='novel[updated_at]' value="<%= @novel.updated_at %>"/><br/><br/>
+  <input type='submit' value='Update'/>
+</form>

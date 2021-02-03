@@ -1,0 +1,16 @@
+<a href="/libraries">Libraries Index</a>
+
+<h1><%= @library.name %></h1>
+
+<div class="">
+  <h3>Online Membership:</h3>
+  <p><%= @library.online_membership %></p>
+  <h3>Current Employees:</h3>
+  <p><%= @library.current_employees %></p>
+  <h3>Built Date:</h3>
+  <p><%= @library.created_at %></p>
+  <h3>Renovated Date:</h3>
+  <p><%= @library.updated_at %></p>
+</div>
+
+<a href="/libraries/<%= @library.id %>/edit">Update Library</a>
