@@ -1,6 +1,10 @@
 <style>
 table, th, td {
-  border: 1px solid black;
+  border: 1px solid lavender;
+}
+
+th, td {
+  padding: 10px;
 }
 </style>
 
@@ -21,7 +25,7 @@ table, th, td {
   </tr>
   <% @libraries.each do |library| %>
   <tr>
-    <td><%= library.id %></td>
+    <td><a href="/libraries/<%= library.id %>"><%= library.id %></a></td>
     <td><%= library.name %></td>
     <td><%= library.online_membership %></td>
     <td><%= library.current_employees %></td>

@@ -9,7 +9,7 @@ th, td {
 </style>
 
 <h1>Novels</h1>
-<a href="/novels/new">New Novel</a>
+<a href="/novels/new">New Novel</a><br><br>
 
   <table>
   <tr>
@@ -23,7 +23,7 @@ th, td {
   </tr>
   <% @novels.each do |novel| %>
   <tr>
-    <td><%= novel.id %></td>
+    <td><a href="/novels/<%= novel.id %>"><%= novel.id %></a></td>
     <td><%= novel.title %></td>
     <td><%= novel.author %></td>
     <td><%= novel.hard_cover %></td>

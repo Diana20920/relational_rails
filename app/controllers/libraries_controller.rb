@@ -15,9 +15,15 @@ class LibrariesController < ApplicationController
       created_at: params[:library][:created_at],
       updated_at: params[:library][:updated_at]
       })
-
       library.save
-
       redirect_to '/libraries'
+  end
+
+  def show
+    @library = Library.find(params[:id])
+  end
+
+  def edit
+    @library = Library.find(params[:id])
   end
 end

@@ -16,9 +16,11 @@ class NovelsController < ApplicationController
       created_at: params[:novel][:created_at],
       updated_at: params[:novel][:updated_at]
       })
-
       novel.save
-
       redirect_to '/novels'
+  end
+
+  def show
+    @novel = Novel.find(params[:id])
   end
 end
