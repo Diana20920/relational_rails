@@ -13,4 +13,10 @@
   <p><%= @library.updated_at %></p>
 </div>
 
-<a href="/libraries/<%= @library.id %>/edit">Update Library</a>
+<a href="/libraries/<%= @library.id %>/edit">Update Library</a><br><br>
+
+<form action="/libraries/<%= @library.id %>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete Library"/>
+</form>
