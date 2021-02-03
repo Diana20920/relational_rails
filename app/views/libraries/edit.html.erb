@@ -1,9 +1,7 @@
-
-
 <form action="/libraries/<%= @library.id %>" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <input type="hidden" name="_method" value="PATCH" />
-  <p>Edit Library</p>
+  <h1>Edit Library</h1>
   <p>Name:</p>
   <input type='text' name='library[name]' value="<%= @library.name %>"/>
   <p>Offer Online Membership?</p>
@@ -12,11 +10,11 @@
   <label for="no">No</label>
   <input type="radio" name="library[online_membership]" id="no" value=false><br>
 
-  <p>Number of current employees:</p>
-  <input type='number' name='library[current_employees]'/>
+  <p>Number of Current Employees:</p>
+  <input type='number' name='library[current_employees]' value="<%= @library.current_employees %>"/>
   <p>Built date:</p>
-  <input type='date' name='library[created_at]'/>
+  <input type='date' name='library[created_at]' value="<%= @library.created_at %>"/>
   <p>Renovated date:</p>
-  <input type='date' name='library[updated_at]'/><br/><br/>
-  <input type='submit' value='Create Library'/>
+  <input type='date' name='library[updated_at]' value="<%= @library.updated_at %>"/><br/><br/>
+  <input type='submit' value='Update'/>
 </form>

@@ -26,4 +26,17 @@ class LibrariesController < ApplicationController
   def edit
     @library = Library.find(params[:id])
   end
+
+  def update
+    library = Library.find(params[:id])
+    library.update({
+      name: params[:library][:name],
+      online_membership: params[:library][:online_membership],
+      current_employees: params[:library][:current_employees],
+      created_at: params[:library][:created_at],
+      updated_at: params[:library][:updated_at]
+      })
+      library.save
+      redirect_to "/libraries/#{library.id}"
+  end
 end
