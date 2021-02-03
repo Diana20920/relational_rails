@@ -1,7 +1,33 @@
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+
 <h1>Libraries</h1>
 
-<a href="/libraries/new">New Library</a>
+<a href="/libraries/new">New Library</a><br><br>
 
-<% @libraries.each do |library| %>
-  <h3><%= library %></h3>
+
+
+  <table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Online Membership</th>
+    <th>Current Employees</th>
+    <th>Built Date</th>
+    <th>Renovated Date</th>
+  </tr>
+  <% @libraries.each do |library| %>
+  <tr>
+    <td><%= library.id %></td>
+    <td><%= library.name %></td>
+    <td><%= library.online_membership %></td>
+    <td><%= library.current_employees %></td>
+    <td><%= library.created_at %></td>
+    <td><%= library.updated_at %></td>
+  </tr>
   <% end %>
+</table>
+

@@ -5,12 +5,18 @@
   <input type='text' name='novel[name]'/>
   <p>Author:</p>
   <input type='text' name='novel[author]'/>
-  <p>Hard Cover?<input type='checkbox' name='novel[hard_cover?]'/></p>
+
+  <p>Hard Cover?</p>
+  <label for="yes">Yes</label>
+  <input type="radio" name="novel[hard_cover?]" id="yes" value=true><br>
+  <label for="no">No</label>
+  <input type="radio" name="novel[hard_cover?]" id="no" value=false><br>
+
   <p>Number of Chapters:</p>
   <input type='number' name='novel[number_of_chapters]'/>
   <p>Written date:</p>
   <input type='date' name='novel[created_at]'/>
   <p>Revised date:</p>
   <input type='date' name='novel[updated_at]'/><br/><br/>
-  <input type='submit'/>
+  <input type='submit' value='Create Novel'/>
 </form>

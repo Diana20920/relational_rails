@@ -3,12 +3,17 @@
   <p>Enter a new Library:</p>
   <p>Name:</p>
   <input type='text' name='library[name]'/>
-  <p>Offer Online Membership?<input type='checkbox' name='library[online_membership]'/></p>
+  <p>Offer Online Membership?</p>
+  <label for="yes">Yes</label>
+  <input type="radio" name="library[online_membership]" id="yes" value=true><br>
+  <label for="no">No</label>
+  <input type="radio" name="library[online_membership]" id="no" value=false><br>
+
   <p>Number of current employees:</p>
   <input type='number' name='library[current_employees]'/>
   <p>Built date:</p>
   <input type='date' name='library[created_at]'/>
   <p>Renovated date:</p>
   <input type='date' name='library[updated_at]'/><br/><br/>
-  <input type='submit'/>
+  <input type='submit' value='Create Library'/>
 </form>
