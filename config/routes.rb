@@ -28,5 +28,5 @@ Rails.application.routes.draw do
   get '/characters/:id', to: 'characters#show'
   get '/characters/:id/edit', to: 'characters#edit'
   patch '/characters/:id', to: 'characters#update'
-  delete '/characters/:id', to: 'characters#destroy'
+  delete '/characters/:id', to: 'characters#destroy', as: 'character'
 end
