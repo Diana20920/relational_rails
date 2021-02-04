@@ -20,4 +20,11 @@ Rails.application.routes.draw do
 
   delete '/novels/:id', to: 'novels#destroy'
   delete '/libraries/:id', to: 'libraries#destroy'
+
+  get '/books', to: 'books#index'
+  get '/characters', to: 'characters#index'
+
+  get '/books/:id', to: 'books#show'
+  get '/characters/:id', to: 'characters#show'
+
 end

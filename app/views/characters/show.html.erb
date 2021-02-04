@@ -1,0 +1,22 @@
+<a href="/characters">Characters Index</a>
+
+<h1><%= @character.name %></h1>
+
+<div class="">
+  <h3>Antagonist:</h3>
+  <p><%= @character.antagonist %></p>
+  <h3>Age:</h3>
+  <p><%= @character.age %></p>
+  <h3>Creation Date:</h3>
+  <p><%= @character.created_at %></p>
+  <h3>Updated Date:</h3>
+  <p><%= @character.updated_at %></p>
+</div>
+
+<a href="/characters/<%= @character.id %>/edit">Update Character</a><br><br>
+
+<form action="/characters/<%= @character.id %>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete Character"/>
+</form>
