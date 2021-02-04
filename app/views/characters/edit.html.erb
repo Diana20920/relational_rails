@@ -1,0 +1,24 @@
+<form action="/characters/<%= @character.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="PATCH" />
+  <h1>Edit Character</h1>
+
+  <p>Novel ID</p>
+  <input type='number' name='character[novel_id]' value="<%= @character.novel_id %>"/>
+
+  <p>Name:</p>
+  <input type='text' name='character[name]' value="<%= @character.name %>"/>
+  <p>Antagonist?</p>
+  <label for="yes">Yes</label>
+  <input type="radio" name="character[antagonist]" id="yes" value=true><br>
+  <label for="no">No</label>
+  <input type="radio" name="character[antagonist]" id="no" value=false><br>
+
+  <p>Age:</p>
+  <input type='number' name='character[age]' value="<%= @character.age %>"/>
+  <p>Creation date:</p>
+  <input type='date' name='character[created_at]' value="<%= @character.created_at %>"/>
+  <p>Updated date:</p>
+  <input type='date' name='character[updated_at]' value="<%= @character.updated_at %>"/><br/><br/>
+  <input type='submit' value='Update'/>
+</form>

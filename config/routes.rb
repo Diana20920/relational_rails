@@ -20,4 +20,19 @@ Rails.application.routes.draw do
 
   delete '/novels/:id', to: 'novels#destroy'
   delete '/libraries/:id', to: 'libraries#destroy'
+
+  get '/books', to: 'books#index'
+  get '/characters', to: 'characters#index'
+
+  get '/books/:id', to: 'books#show'
+  get '/characters/:id', to: 'characters#show'
+
+  get '/books/:id/edit', to: 'books#edit'
+  patch '/books/:id', to: 'books#update'
+
+  get '/characters/:id/edit', to: 'characters#edit'
+  patch '/characters/:id', to: 'characters#update'
+
+  delete '/books/:id', to: 'books#destroy'
+  delete '/characters/:id', to: 'characters#destroy'
 end

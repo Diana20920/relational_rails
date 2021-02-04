@@ -1,0 +1,38 @@
+<style>
+table, th, td {
+  border: 1px solid skyblue;
+}
+
+th, td {
+  padding: 10px;
+}
+</style>
+
+<h1>Books</h1>
+
+<a href="/books/new">New Book</a><br><br>
+
+
+
+  <table>
+  <tr>
+    <th>ID</th>
+    <th>Library ID</th>
+    <th>Title</th>
+    <th>Audio Book</th>
+    <th>Copies Available</th>
+    <th>Written Date</th>
+    <th>Revised Date</th>
+  </tr>
+  <% @books.each do |book| %>
+  <tr>
+    <td><a href="/books/<%= book.id %>"><%= book.id %></a></td>
+    <td><%= book.library_id %></td>
+    <td><%= book.title %></td>
+    <td><%= book.audio_book %></td>
+    <td><%= book.copies_available %></td>
+    <td><%= book.created_at %></td>
+    <td><%= book.updated_at %></td>
+  </tr>
+  <% end %>
+</table>
