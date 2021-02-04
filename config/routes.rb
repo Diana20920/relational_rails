@@ -32,4 +32,7 @@ Rails.application.routes.draw do
 
   get '/characters/:id/edit', to: 'characters#edit'
   patch '/characters/:id', to: 'characters#update'
+
+  delete '/books/:id', to: 'books#destroy'
+  delete '/characters/:id', to: 'characters#destroy'
 end

@@ -24,4 +24,9 @@ class CharactersController < ApplicationController
     character.save
     redirect_to "/characters/#{character.id}"
   end
+
+  def destroy
+    Character.destroy(params[:id])
+    redirect_to '/characters'
+  end
 end
