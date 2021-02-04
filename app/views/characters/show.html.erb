@@ -15,8 +15,4 @@
 
 <a href="/characters/<%= @character.id %>/edit">Update Character</a><br><br>
 
-<form action="/characters/<%= @character.id %>" method="POST">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete Character"/>
-</form>
+<%= link_to "Delete Character", character_path(@character), method: :delete %>
