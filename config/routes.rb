@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get '/novels/:id', to: 'novels#show'
   get '/novels/:id/edit', to: 'novels#edit'
   patch '/novels/:id', to: 'novels#update'
-  delete '/novels/:id', to: 'novels#destroy'
+  delete '/novels/:id', to: 'novels#destroy', as: 'novel'
 
   get '/books', to: 'books#index'
   get '/books/:id', to: 'books#show'
