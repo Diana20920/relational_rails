@@ -1,6 +1,11 @@
 class CharactersController < ApplicationController
   def index
-    @characters = Character.all
+    if params[:id].nil?
+      @characters = Character.all
+    else
+      novel = Novel.find(params[:id])
+      @characters = novel.characters
+    end
   end
 
   def show
