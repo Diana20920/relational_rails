@@ -44,4 +44,9 @@ class LibrariesController < ApplicationController
     Library.destroy(params[:id])
     redirect_to '/libraries'
   end
+
+  def books_index
+    @library = Library.find(params[:id])
+    @library_books = @library.books
+  end
 end

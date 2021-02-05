@@ -29,4 +29,6 @@ Rails.application.routes.draw do
   get '/characters/:id/edit', to: 'characters#edit'
   patch '/characters/:id', to: 'characters#update'
   delete '/characters/:id', to: 'characters#destroy', as: 'character'
+
+  get '/libraries/:id/books', to: 'libraries#books_index'
 end
