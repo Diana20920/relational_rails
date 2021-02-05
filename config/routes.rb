@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/libraries/:id/edit', to: 'libraries#edit'
   patch '/libraries/:id', to: 'libraries#update'
   delete '/libraries/:id', to: 'libraries#destroy', as: 'library'
+  get '/libraries/:id/books', to: 'libraries#books_index'
 
   get '/novels', to: 'novels#index'
   get '/novels/new', to: 'novels#new'
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
   get '/novels/:id/edit', to: 'novels#edit'
   patch '/novels/:id', to: 'novels#update'
   delete '/novels/:id', to: 'novels#destroy', as: 'novel'
+  get '/novels/:id/characters', to: 'novels#characters_index'
 
   get '/books', to: 'books#index'
   get '/books/:id', to: 'books#show'
@@ -30,5 +32,4 @@ Rails.application.routes.draw do
   patch '/characters/:id', to: 'characters#update'
   delete '/characters/:id', to: 'characters#destroy', as: 'character'
 
-  get '/libraries/:id/books', to: 'libraries#books_index'
 end

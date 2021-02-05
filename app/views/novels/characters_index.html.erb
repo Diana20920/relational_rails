@@ -1,0 +1,36 @@
+<style>
+table, th, td {
+  border: 1px solid skyblue;
+}
+
+th, td {
+  padding: 10px;
+}
+</style>
+
+<h1><%= @novel.title %> Characters</h1>
+
+<a href="/characters/new">New Character</a><br><br>
+
+  <table>
+  <tr>
+    <th>ID</th>
+    <th>Novel ID</th>
+    <th>Name</th>
+    <th>Antagonist</th>
+    <th>Age</th>
+    <th>Creation Date</th>
+    <th>Updated Date</th>
+  </tr>
+  <% @novel_characters.each do |character| %>
+  <tr>
+    <td><a href="/characters/<%= character.id %>"><%= character.id %></a></td>
+    <td><%= character.novel_id %></td>
+    <td><%= character.name %></td>
+    <td><%= character.antagonist %></td>
+    <td><%= character.age %></td>
+    <td><%= character.created_at %></td>
+    <td><%= character.updated_at %></td>
+  </tr>
+  <% end %>
+</table>
