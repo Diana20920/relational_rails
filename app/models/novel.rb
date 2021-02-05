@@ -1,3 +1,3 @@
 class Novel < ApplicationRecord
-
-end 
+  has_many :characters
+end
