@@ -13,6 +13,8 @@
   <p><%= @library.updated_at %></p>
 </div>
 
+<a href="/libraries/<%= @library.id %>/books">View Books</a><br><br>
+
 <a href="/libraries/<%= @library.id %>/edit">Update Library</a><br><br>
 
 <%= link_to "Delete Library", library_path(@library), method: :delete %>
