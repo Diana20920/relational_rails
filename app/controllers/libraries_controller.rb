@@ -1,6 +1,6 @@
 class LibrariesController < ApplicationController
   def index
-    @libraries = Library.all
+    @libraries = Library.sort_by_newest
   end
 
   def new
