@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   def index
     if params[:id].nil?
-      @books = Book.all
+      @books = Book.all_true
     else
       @library = Library.find(params[:id])
       @books = @library.books
