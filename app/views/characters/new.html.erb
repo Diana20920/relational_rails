@@ -1,0 +1,20 @@
+<form action="/novels/<%= params[:id] %>/characters" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>Enter a new Character:</p>
+  <p>Name:</p>
+  <input type='text' name='character[name]'/>
+
+  <p>Antagonist?</p>
+  <label for="yes">Yes</label>
+  <input type="radio" name="character[antagonist]" id="yes" value=true><br>
+  <label for="no">No</label>
+  <input type="radio" name="character[antagonist]" id="no" value=false><br>
+
+  <p>Age:</p>
+  <input type='number' name='character[age]'/>
+  <p>Creation Date:</p>
+  <input type='date' name='characters[created_at]'/>
+  <p>Updated Date:</p>
+  <input type='date' name='characters[updated_at]'/><br/><br/>
+  <input type='submit' value='Create Character'/>
+</form>
