@@ -1,6 +1,12 @@
 class CharactersController < ApplicationController
   def index
-    @characters = Character.all
+    if params[:id].nil?
+      @characters = Character.all
+
+    else
+      @novel = Novel.find(params[:id])
+      @characters = @novel.characters
+    end
   end
 
   def show
@@ -14,7 +20,6 @@ class CharactersController < ApplicationController
   def update
     character = Character.find(params[:id])
     character.update({
-      novel_id: params[:character][:novel_id],
       name: params[:character][:name],
       antagonist: params[:character][:antagonist],
       age: params[:character][:age],
@@ -28,5 +33,22 @@ class CharactersController < ApplicationController
   def destroy
     Character.destroy(params[:id])
     redirect_to '/characters'
+  end
+
+  def new
+
+  end
+
+  def create
+    novel = Novel.find(params[:id])
+    character = novel.characters.new({
+      name: params[:character][:name],
+      antagonist: params[:character][:antagonist],
+      age: params[:character][:age],
+      updated_at: params[:character][:updated_at],
+      created_at: params[:character][:created_at]
+      })
+    character.save
+    redirect_to "/novels/#{character.novel_id}/characters"
   end
 end

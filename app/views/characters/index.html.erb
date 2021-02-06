@@ -10,7 +10,9 @@ th, td {
 
 <h1>Characters</h1>
 
-<a href="/characters/new">New Character</a><br><br>
+<% if @novel %>
+<a href="/novels/<%= @novel.id %>/characters/new">Create Character</a><br><br>
+<% end %>
 
   <table>
   <tr>

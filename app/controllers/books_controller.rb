@@ -1,6 +1,11 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.all
+    if params[:id].nil?
+      @books = Book.all
+    else
+      library = Library.find(params[:id])
+      @books = library.books
+    end
   end
 
   def show
