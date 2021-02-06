@@ -2,7 +2,6 @@ class CharactersController < ApplicationController
   def index
     if params[:id].nil?
       @characters = Character.all
-
     else
       @novel = Novel.find(params[:id])
       @characters = @novel.characters

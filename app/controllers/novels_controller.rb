@@ -1,6 +1,6 @@
 class NovelsController < ApplicationController
   def index
-    @novels = Novel.all
+    @novels = Novel.sort_by_newest
   end
 
   def new

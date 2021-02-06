@@ -10,7 +10,9 @@ th, td {
 
 <h1>Books</h1>
 
-<a href="/books/new">New Book</a><br><br>
+<% if @library %>
+<a href="/libraries/<%= @library.id %>/books/new">Create Book</a><br><br>
+<% end %>
 
   <table>
   <tr>
