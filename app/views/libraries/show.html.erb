@@ -1,6 +1,14 @@
-<a href="/libraries">Libraries Index</a>
+<a href="/libraries">Libraries Index |</a>
+<a href="/libraries/<%= @library.id %>/books"> View Books |</a>
+<a href="/libraries/<%= @library.id %>/edit"> Update Library |</a>
+<%= link_to " Delete Library", library_path(@library), method: :delete %>
 
 <h1><%= @library.name %></h1>
+
+<div class="">
+  <h2>Available Books: </h2>
+  <p><%= @library_books_count %></p>
+</div>
 
 <div class="">
   <h3>Online Membership:</h3>
@@ -13,8 +21,5 @@
   <p><%= @library.updated_at %></p>
 </div>
 
-<a href="/libraries/<%= @library.id %>/books">View Books</a><br><br>
 
-<a href="/libraries/<%= @library.id %>/edit">Update Library</a><br><br>
 
-<%= link_to "Delete Library", library_path(@library), method: :delete %>
