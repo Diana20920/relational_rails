@@ -4,4 +4,8 @@ class Novel < ApplicationRecord
   def self.sort_by_newest
     order('created_at DESC')
   end
+
+  def characters_count
+    characters.count
+  end
 end
