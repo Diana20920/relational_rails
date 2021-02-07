@@ -8,4 +8,8 @@ class Library < ApplicationRecord
   def books_count
     books.count
   end
+
+  def given_limit(threshold)
+    books.where("copies_available > ?", threshold.to_i)
+  end
 end
