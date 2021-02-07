@@ -2,9 +2,12 @@ class CharactersController < ApplicationController
   def index
     if params[:id].nil?
       @characters = Character.all_true
-    else
+    elsif params[:id] && !params.keys.include?("age_limit")
       @novel = Novel.find(params[:id])
       @characters = @novel.characters
+    else
+      @novel = Novel.find(params[:id])
+      @characters = @novel.given_limit(params[:age_limit][:number])
     end
   end
 

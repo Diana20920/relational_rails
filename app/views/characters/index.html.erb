@@ -12,8 +12,12 @@ th, td {
 
 <% if @novel %>
 <a href="/novels/<%= @novel.id %>/characters/new">Create Character</a><br><br>
+<%= form_for :age_limit, url: novel_characters_path(@novel), method: :get do |c| %>
+  <%= c.text_field :number %>
+  <%= c.submit ("Only return characters with more than amount of age available") %>
 <% end %>
-
+<% end %>
+<br><br>
   <table>
   <tr>
     <th>ID</th>
