@@ -10,6 +10,8 @@ th, td {
 
 <h1>Books</h1>
 
+<%= link_to "Sort A-Z", books_path(@library, :sort => "title") %>
+
 <% if @library %>
   <a href="/libraries/<%= @library.id %>/books/new">Create Book</a><br><br>
   <%= form_for :copies, url: library_books_path(@library), method: :get do |c| %>
@@ -40,7 +42,3 @@ th, td {
   </tr>
   <% end %>
 </table>
-
-
-
-
