@@ -1,6 +1,9 @@
 class BooksController < ApplicationController
   def index
-    if params[:id].nil?
+    if params[:sort]
+      @library = Library.find(params[:format])
+      @books = @library.books.order(params[:sort])
+    elsif params[:id].nil?
       @books = Book.all_true
     elsif params[:id] && !params.keys.include?("copies")
       @library = Library.find(params[:id])

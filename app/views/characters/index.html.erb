@@ -10,6 +10,8 @@ th, td {
 
 <h1>Characters</h1>
 
+<%= link_to "Sort A-Z", characters_path(@novel, :sort => "name") %>
+
 <% if @novel %>
 <a href="/novels/<%= @novel.id %>/characters/new">Create Character</a><br><br>
 <%= form_for :age_limit, url: novel_characters_path(@novel), method: :get do |c| %>

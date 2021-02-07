@@ -1,6 +1,9 @@
 class CharactersController < ApplicationController
   def index
-    if params[:id].nil?
+    if params[:sort]
+      @novel = Novel.find(params[:format])
+      @characters = @novel.characters.order(params[:sort])
+    elsif params[:id].nil?
       @characters = Character.all_true
     elsif params[:id] && !params.keys.include?("age_limit")
       @novel = Novel.find(params[:id])
