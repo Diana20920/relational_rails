@@ -2,9 +2,12 @@ class BooksController < ApplicationController
   def index
     if params[:id].nil?
       @books = Book.all_true
-    else
+    elsif params[:id] && !params.keys.include?("copies")
       @library = Library.find(params[:id])
       @books = @library.books
+    else
+      @library = Library.find(params[:id])
+      @books = @library.given_limit(params[:copies][:number])
     end
   end
 
