@@ -1,4 +1,5 @@
-<%= link_to "Books Index", "/books" %>
+<%= link_to "Characters Index", "/characters" %>
+<%= link_to "  | Books Index", "/books" %>
 
 <form action="/characters/<%= @character.id %>" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">

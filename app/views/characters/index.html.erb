@@ -12,6 +12,7 @@ th, td {
 
 <%= link_to "Books Index", "/books" %><br><br>
 <% if @novel %>
+<%= link_to "Characters Index", "/characters" %><br><br>
 <a href="/novels/<%= @novel.id %>/characters/new">Create Character</a><br><br>
 <%= link_to "Sort A-Z", characters_path(@novel, :sort => "name") %><br><br>
 <%= form_for :age_limit, url: novel_characters_path(@novel), method: :get do |c| %>
