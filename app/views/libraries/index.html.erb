@@ -29,6 +29,7 @@ th, td {
     <td><%= library.current_employees %></td>
     <td><%= library.created_at %></td>
     <td><%= library.updated_at %></td>
+    <td><%= link_to "edit library", library_edit_path(library) %></td>
   </tr>
   <% end %>
 </table>
