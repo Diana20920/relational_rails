@@ -10,16 +10,16 @@ th, td {
 
 <h1>Characters</h1>
 
-<%= link_to "Sort A-Z", characters_path(@novel, :sort => "name") %>
 
 <% if @novel %>
 <a href="/novels/<%= @novel.id %>/characters/new">Create Character</a><br><br>
+<%= link_to "Sort A-Z", characters_path(@novel, :sort => "name") %><br><br>
 <%= form_for :age_limit, url: novel_characters_path(@novel), method: :get do |c| %>
   <%= c.text_field :number %>
   <%= c.submit ("Only return characters with more than amount of age available") %>
+  <br><br>
+  <% end %>
 <% end %>
-<% end %>
-<br><br>
   <table>
   <tr>
     <th>ID</th>
