@@ -10,7 +10,7 @@ th, td {
 
 <h1>Characters</h1>
 
-
+<%= link_to "Books Index", "/books" %><br><br>
 <% if @novel %>
 <a href="/novels/<%= @novel.id %>/characters/new">Create Character</a><br><br>
 <%= link_to "Sort A-Z", characters_path(@novel, :sort => "name") %><br><br>

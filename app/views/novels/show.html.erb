@@ -1,4 +1,5 @@
 <a href="/novels">Novels Index</a>
+<%= link_to " |  Books Index", "/books" %>
 <a href="/novels/<%= @novel.id %>/characters">  |  View Characters</a>
 <a href="/novels/<%= @novel.id %>/edit">  |  Update Novel</a>
 <%= link_to "  |  Delete Novel", novel_path(@novel), method: :delete %>

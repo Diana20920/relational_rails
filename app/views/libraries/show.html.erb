@@ -1,4 +1,5 @@
 <a href="/libraries">Libraries Index |</a>
+<%= link_to "Books Index |", "/books" %>
 <a href="/libraries/<%= @library.id %>/books"> View Books |</a>
 <a href="/libraries/<%= @library.id %>/edit"> Update Library |</a>
 <%= link_to " Delete Library", library_path(@library), method: :delete %>
@@ -20,6 +21,3 @@
   <h3>Renovated Date:</h3>
   <p><%= @library.updated_at %></p>
 </div>
-
-
-

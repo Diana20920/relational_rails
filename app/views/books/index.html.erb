@@ -10,8 +10,9 @@ th, td {
 
 <h1>Books</h1>
 
-
+<%= link_to "Characters Index", "/characters" %><br><br>
 <% if @library %>
+<%= link_to "Books Index", "/books" %><br><br>
   <a href="/libraries/<%= @library.id %>/books/new">Create Book</a><br><br>
   <%= link_to "Sort A-Z", books_path(@library, :sort => "title") %><br><br>
   <%= form_for :copies, url: library_books_path(@library), method: :get do |c| %>
