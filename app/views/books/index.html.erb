@@ -39,6 +39,7 @@ th, td {
     <td><%= book.copies_available %></td>
     <td><%= book.created_at %></td>
     <td><%= book.updated_at %></td>
+    <td><a href="/books/<%= book.id %>/edit">edit</a></td>
   </tr>
   <% end %>
 </table>
