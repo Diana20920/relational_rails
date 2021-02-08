@@ -31,7 +31,8 @@ th, td {
     <td><%= novel.number_of_chapters %></td>
     <td><%= novel.created_at %></td>
     <td><%= novel.updated_at %></td>
-    <td><%= link_to "edit novel", novel_edit_path(novel) %></td>
+    <td><%= link_to "edit", novel_edit_path(novel) %></td>
+    <td><%= link_to "delete", novel_path(novel), method: :delete %></td>
   </tr>
   <% end %>
 </table>
