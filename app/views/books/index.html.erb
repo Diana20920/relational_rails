@@ -40,6 +40,7 @@ th, td {
     <td><%= book.created_at %></td>
     <td><%= book.updated_at %></td>
     <td><a href="/books/<%= book.id %>/edit">edit</a></td>
+    <td><%= link_to "delete", book_path(book), method: :delete %></td>
   </tr>
   <% end %>
 </table>
