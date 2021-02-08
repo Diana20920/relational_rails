@@ -39,6 +39,8 @@ th, td {
     <td><%= character.age %></td>
     <td><%= character.created_at %></td>
     <td><%= character.updated_at %></td>
+    <td><a href="/characters/<%= character.id %>/edit">edit</a></td>
+    <td><%= link_to "delete", character_path(character), method: :delete %></td>
   </tr>
   <% end %>
 </table>
