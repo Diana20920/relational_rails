@@ -13,5 +13,15 @@ RSpec.describe 'As a visitor', type: :feature do
       expect(page).to have_content(little_creek.name)
       expect(page).to have_content(hogwarts.name)
     end
+
+    it "has a link to create new library" do
+      visit "/libraries"
+
+      expect(page).to have_link("New Library")
+
+      click_link "New Library"
+
+      expect(current_path).to eq("/libraries/new")
+    end
   end
 end
