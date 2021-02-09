@@ -43,6 +43,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'shoulda-matchers'
   gem 'pry'
+  gem 'rspec-pride'
 end
 
 group :development do
