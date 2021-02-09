@@ -37,7 +37,6 @@ RSpec.describe 'As a visitor' do
       expect(page).to have_content(book2.copies_available)
       expect(page).to_not have_content(book3.title)
       expect(page).to_not have_content(book4.title)
-      expect(page).to_not have_content(book4.copies_available)
     end
   end
 end
