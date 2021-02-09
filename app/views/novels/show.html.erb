@@ -1,4 +1,6 @@
-<a href="/novels">Novels Index</a>
+<%= link_to "Libraries Index | ", "/libraries" %>
+<%= link_to "Novels Index", "/novels" %><br><br>
+<%= link_to "Characters Index | ", "/characters" %>
 <%= link_to " |  Books Index", "/books" %>
 <a href="/novels/<%= @novel.id %>/characters">  |  View Characters</a>
 <a href="/novels/<%= @novel.id %>/edit">  |  Update Novel</a>
