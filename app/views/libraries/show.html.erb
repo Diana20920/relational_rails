@@ -1,5 +1,7 @@
-<a href="/libraries">Libraries Index |</a>
-<%= link_to "Books Index |", "/books" %>
+<%= link_to "Libraries Index | ", "/libraries" %>
+<%= link_to "Novels Index | ", "/novels" %><br><br>
+<%= link_to "Books Index", "/books" %>
+<%= link_to "  | Characters Index | ", "/characters" %>
 <a href="/libraries/<%= @library.id %>/books"> View Books |</a>
 <a href="/libraries/<%= @library.id %>/edit"> Update Library |</a>
 <%= link_to " Delete Library", library_path(@library), method: :delete %>
