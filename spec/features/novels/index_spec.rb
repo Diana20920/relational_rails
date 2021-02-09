@@ -13,5 +13,15 @@ RSpec.describe 'As a visitor', type: :feature do
       expect(page).to have_content(hyos.title)
       expect(page).to have_content(great_gatsby.title)
     end
+
+    it "has a link to create new novel" do
+      visit "/novels"
+
+      expect(page).to have_link("New Novel")
+
+      click_link "New Novel"
+
+      expect(current_path).to eq("/novels/new")
+    end
   end
 end
