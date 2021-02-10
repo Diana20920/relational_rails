@@ -51,6 +51,22 @@ RSpec.describe 'As a visitor' do
         expect(page).to_not have_content(char1.name)
         expect(page).to_not have_content(char2.age)
       end
+
+      it "returns records over a given treshold by inputing into a form" do
+        hyos = Novel.create!(title: '100 Years of Solitude', author: 'Gabriel García Márquez', number_of_chapters: 30)
+        char_1 = hyos.characters.create!(name: 'Amaranta', age: 20)
+        char_2 = hyos.characters.create!(name: 'Úrsula Iguarán', age: 45)
+        char_3 = hyos.characters.create!(name: 'Francisco Patotas', age: 26)
+
+        visit "/novels/#{hyos.id}/characters"
+
+        fill_in "age_limit[number]", with: 22
+        click_button "Only return characters with more than amount of age available"
+
+        expect(page).to have_content(char_2.name)
+        expect(page).to have_content(char_3.name)
+        expect(page).to_not have_content(char_1.name)
+      end
     end
   end
 end
