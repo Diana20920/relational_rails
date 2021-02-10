@@ -17,6 +17,19 @@ RSpec.describe 'As a visitor' do
       expect(page).to have_content(char2.age)
     end
 
+    it "displays the records with antagonist as true" do
+      tlotr = Novel.create!(title: 'The Lord of the Rings', author: 'J. R. R. Tolkien', number_of_chapters: 60)
+      char1 = tlotr.characters.create!(name: 'Gollum', age: 15, antagonist: true)
+      char2 = tlotr.characters.create!(name: 'Legolas', age: 200, antagonist: true)
+      char3 = tlotr.characters.create!(name: 'Good Guy', age: 500, antagonist: false)
+
+      visit '/characters'
+
+      expect(page).to have_content(char1.name)
+      expect(page).to have_content(char2.name)
+      expect(page).to_not have_content(char3.name)
+    end
+
     describe "I visit the novel's characters page" do
       it 'shows all the characters for that novel' do
         eleven_minutes = Novel.create!(title: 'Eleven Minutes', author: 'Paulo Coelho', number_of_chapters: 10)
