@@ -67,6 +67,23 @@ RSpec.describe 'As a visitor' do
         expect(page).to have_content(char_3.name)
         expect(page).to_not have_content(char_1.name)
       end
+
+      it "has a link that sorts records alphabetically" do
+        hyos = Novel.create!(title: '100 Years of Solitude', author: 'Gabriel García Márquez', number_of_chapters: 30)
+        char_1 = hyos.characters.create!(name: 'Amaranta', age: 20)
+        char_2 = hyos.characters.create!(name: 'Ursula Iguarán', age: 45)
+        char_3 = hyos.characters.create!(name: 'Francisco Patotas', age: 26)
+        char_4 = hyos.characters.create!(name: 'Gerardo Flores', age: 31)
+
+        visit "/novels/#{hyos.id}/characters"
+        expect(page).to have_link("Sort A-Z")
+        expect(char_2.name).to appear_before(char_4.name)
+
+        click_link("Sort A-Z")
+
+        expect(char_1.name).to appear_before(char_4.name)
+        expect(char_3.name).to appear_before(char_2.name)
+      end
     end
   end
 end

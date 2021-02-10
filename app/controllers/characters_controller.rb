@@ -1,7 +1,7 @@
 class CharactersController < ApplicationController
   def index
     if params[:sort]
-      @novel = Novel.find(params[:format])
+      @novel = Novel.find(params[:novel_id])
       @characters = @novel.characters.order(params[:sort])
     elsif params[:id].nil?
       @characters = Character.all_true
