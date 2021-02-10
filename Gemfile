@@ -44,6 +44,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'pry'
   gem 'rspec-pride'
+  gem 'orderly'
 end
 
 group :development do

@@ -65,5 +65,23 @@ RSpec.describe 'As a visitor' do
       expect(page).to have_content(book2.title)
       expect(page).to_not have_content(book1.title)
     end
+
+    it "has a link that sorts records alphabetically" do
+      little_creek = Library.create!(name: 'Little Creek', current_employees: 20)
+      book1 = little_creek.books.create!(title: 'Ruby', copies_available: 3)
+      book2 = little_creek.books.create!(title: 'Coding for Dummies', copies_available: 20)
+      book3 = little_creek.books.create!(title: 'Rspec for Dummies', copies_available: 234)
+      book4 = little_creek.books.create!(title: 'Zoo Keeping for Dummies', copies_available: 32)
+
+      visit "/libraries/#{little_creek.id}/books"
+
+      expect(page).to have_link("Sort A-Z")
+      expect(book1.title).to appear_before(book4.title)
+
+      click_link("Sort A-Z")
+
+      expect(book2.title).to appear_before(book4.title)
+      expect(book3.title).to appear_before(book1.title)
+    end
   end
 end
