@@ -47,9 +47,4 @@ class NovelsController < ApplicationController
     Novel.destroy(params[:id])
     redirect_to '/novels'
   end
-
-  # def characters_index
-  #   @novel = Novel.find(params[:id])
-  #   @novel_characters = @novel.characters
-  # end
 end

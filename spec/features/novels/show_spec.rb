@@ -23,5 +23,17 @@ RSpec.describe 'As a visitor', type: :feature do
       expect(current_path).to eq("/novels")
       expect(page).to_not have_content(tlotr.title)
     end
+
+    it "has count of characters for that novel" do
+      tlotr = Novel.create!(title: 'The Lord of the Rings', author: 'J. R. R. Tolkien', number_of_chapters: 60)
+      tlotr.characters.create!(name: 'Gollum', age: 15)
+      tlotr.characters.create!(name: 'Legolas', age: 200)
+      tlotr.characters.create!(name: 'Bilbo Baggins', age: 40)
+      tlotr.characters.create!(name: 'Gandalf', age: 300)
+
+      visit "/novels/#{tlotr.id}"
+
+      expect(page).to have_content(4)
+    end
   end
 end
