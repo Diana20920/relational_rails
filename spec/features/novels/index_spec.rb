@@ -32,6 +32,9 @@ RSpec.describe 'As a visitor', type: :feature do
 
       expect(Novel.first).to eq(eleven_minutes)
       expect(Novel.last).to eq(great_gatsby)
+
+      expect(great_gatsby.title).to appear_before(eleven_minutes.title)
+      expect(hyos.title).to appear_before(eleven_minutes.title)
     end
   end
 end

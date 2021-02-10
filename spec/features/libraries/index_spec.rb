@@ -32,6 +32,9 @@ RSpec.describe 'As a visitor', type: :feature do
 
       expect(Library.first).to eq(library1)
       expect(Library.last).to eq(hogwarts)
+
+      expect(hogwarts.name).to appear_before(library1.name)
+      expect(little_creek.name).to appear_before(library1.name)
     end
   end
 end
