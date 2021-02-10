@@ -28,7 +28,6 @@ RSpec.describe 'As a visitor' do
       expect(page).to have_content(book2.title)
       expect(page).to_not have_content(book3.title)
     end
-
   end
 
   describe "I visit the library's books page" do
@@ -51,6 +50,20 @@ RSpec.describe 'As a visitor' do
       expect(page).to have_content(book2.copies_available)
       expect(page).to_not have_content(book3.title)
       expect(page).to_not have_content(book4.title)
+    end
+
+    it "returns records over a given treshold by inputing into a form" do
+      little_creek = Library.create!(name: 'Little Creek', current_employees: 20)
+      book1 = little_creek.books.create!(title: 'Ruby', copies_available: 3)
+      book2 = little_creek.books.create!(title: 'Coding for Dummies', copies_available: 20)
+
+      visit "/libraries/#{little_creek.id}/books"
+
+      fill_in "copies[number]", with: 10
+      click_button "Only return books with more than amount of copies available"
+
+      expect(page).to have_content(book2.title)
+      expect(page).to_not have_content(book1.title)
     end
   end
 end
