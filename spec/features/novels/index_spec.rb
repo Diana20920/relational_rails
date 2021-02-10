@@ -23,5 +23,15 @@ RSpec.describe 'As a visitor', type: :feature do
 
       expect(current_path).to eq("/novels/new")
     end
+
+    it "shows most recent created novel" do
+      eleven_minutes = Novel.create!(title: 'Eleven Minutes', author: 'Paulo Coelho', number_of_chapters: 10)
+      hyos = Novel.create!(title: '100 Years of Solitude', author: 'Gabriel García Márquez', number_of_chapters: 30)
+      great_gatsby = Novel.create!(title: 'The Great Gatsby', author: 'F. Scott Ftizgerald', number_of_chapters: 15)
+      visit "/novels"
+
+      expect(Novel.first).to eq(eleven_minutes)
+      expect(Novel.last).to eq(great_gatsby)
+    end
   end
 end
