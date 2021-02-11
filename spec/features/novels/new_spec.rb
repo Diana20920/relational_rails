@@ -11,7 +11,6 @@ RSpec.describe 'New Novel', type: :feature do
 
         fill_in 'novel[title]', with: 'Novel1'
         fill_in 'novel[number_of_chapters]', with: 33
-
         click_on "Create Novel"
 
         expect(current_path).to eq("/novels")

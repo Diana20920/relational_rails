@@ -7,10 +7,10 @@
 <%= link_to "  |  Delete Novel", novel_path(@novel), method: :delete %>
 
 <h1><%= @novel.title %></h1>
-<div class="">
-  <h2>Characters in Novel: </h2>
-  <p><%= @novel_characters_count %></p>
-</div>
+  <div class="">
+    <h2>Characters in Novel: </h2>
+    <p><%= @novel_characters_count %></p>
+  </div>
 <div class="">
   <h3>Author:</h3>
   <p><%= @novel.author %></p>

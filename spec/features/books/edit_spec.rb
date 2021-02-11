@@ -8,9 +8,7 @@ RSpec.describe 'Update book' do
         book = portales.books.create!(title: 'French 201', copies_available: 20)
 
         visit "/books/#{book.id}"
-
         expect(page).to have_link('Update Book')
-
         click_link 'Update Book'
 
         expect(current_path).to eq("/books/#{book.id}/edit")
@@ -21,10 +19,8 @@ RSpec.describe 'Update book' do
         book = portales.books.create!(title: 'French 201', copies_available: 20)
 
         visit "/books/#{book.id}/edit"
-
         fill_in 'book[title]', with: 'German 202'
         fill_in 'book[copies_available]', with: 10
-
         click_button "Update"
 
         expect(current_path).to eq("/books/#{book.id}")

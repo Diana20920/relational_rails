@@ -8,9 +8,7 @@ RSpec.describe 'Update character' do
         character = great_gatsby.characters.create!(name: 'Jay Gatsby', age: 28)
 
         visit "/characters/#{character.id}"
-
         expect(page).to have_link('Update Character')
-
         click_link 'Update Character'
 
         expect(current_path).to eq("/characters/#{character.id}/edit")
@@ -21,10 +19,8 @@ RSpec.describe 'Update character' do
         character = great_gatsby.characters.create!(name: 'Jay Gatsby', age: 28)
 
         visit "/characters/#{character.id}/edit"
-
         fill_in 'character[name]', with: 'Juan Gatsby'
         fill_in 'character[age]', with: 36
-
         click_button "Update"
 
         expect(current_path).to eq("/characters/#{character.id}")

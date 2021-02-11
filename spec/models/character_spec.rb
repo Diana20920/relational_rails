@@ -16,6 +16,7 @@ RSpec.describe Character do
 
         expect(Character.all_true.count).to eq(3)
       end
+      
       it "returns no records if antagonist column is false" do
         hyos = Novel.create!(title: '100 Years of Solitude', author: 'Gabriel García Márquez', number_of_chapters: 30)
         hyos.characters.create!(name: 'Amaranta', age: 20, antagonist: false)

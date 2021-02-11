@@ -13,6 +13,7 @@ th, td {
 <%= link_to "Libraries Index | ", "/libraries" %>
 <%= link_to "Novels Index | ", "/novels" %>
 <%= link_to "Books Index", "/books" %><br><br>
+
 <% if @novel %>
 <%= link_to "Characters Index", "/characters" %><br><br>
 <a href="/novels/<%= @novel.id %>/characters/new">Create Character</a><br><br>
@@ -23,7 +24,8 @@ th, td {
   <br><br>
   <% end %>
 <% end %>
-  <table>
+
+<table>
   <tr>
     <th>ID</th>
     <th>Novel ID</th>
@@ -34,16 +36,16 @@ th, td {
     <th>Updated Date</th>
   </tr>
   <% @characters.each do |character| %>
-  <tr>
-    <td><a href="/characters/<%= character.id %>"><%= character.id %></a></td>
-    <td><%= character.novel_id %></td>
-    <td><%= character.name %></td>
-    <td><%= character.antagonist %></td>
-    <td><%= character.age %></td>
-    <td><%= character.created_at %></td>
-    <td><%= character.updated_at %></td>
-    <td><a href="/characters/<%= character.id %>/edit">edit</a></td>
-    <td><%= link_to "delete", character_path(character), method: :delete %></td>
-  </tr>
+    <tr>
+      <td><a href="/characters/<%= character.id %>"><%= character.id %></a></td>
+      <td><%= character.novel_id %></td>
+      <td><%= character.name %></td>
+      <td><%= character.antagonist %></td>
+      <td><%= character.age %></td>
+      <td><%= character.created_at %></td>
+      <td><%= character.updated_at %></td>
+      <td><a href="/characters/<%= character.id %>/edit">edit</a></td>
+      <td><%= link_to "delete", character_path(character), method: :delete %></td>
+    </tr>
   <% end %>
 </table>

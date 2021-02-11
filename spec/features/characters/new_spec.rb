@@ -12,7 +12,6 @@ RSpec.describe 'New Novel Character' do
 
         fill_in 'character[name]', with: 'Jesus Biogigigraphy'
         fill_in 'character[age]', with: 21
-
         click_on 'Create Character'
 
         expect(current_path).to eq("/novels/#{animal_farm.id}/characters")

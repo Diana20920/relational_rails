@@ -28,11 +28,11 @@ RSpec.describe 'As a visitor', type: :feature do
       library1 = Library.create!(name: 'Library 1', current_employees: 5, online_membership: true)
       little_creek = Library.create!(name: 'Little Creek', current_employees: 20, online_membership: true)
       hogwarts = Library.create!(name: 'Hogwarts', current_employees: 3, online_membership: true)
+
       visit "/libraries"
 
       expect(Library.first).to eq(library1)
       expect(Library.last).to eq(hogwarts)
-
       expect(hogwarts.name).to appear_before(library1.name)
       expect(little_creek.name).to appear_before(library1.name)
     end

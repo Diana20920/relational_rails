@@ -37,7 +37,6 @@ RSpec.describe 'As a visitor' do
 
         char1 = eleven_minutes.characters.create!(name: 'Ralf Hart', age: 38)
         char2 = eleven_minutes.characters.create!(name: 'Nyah', age: 27)
-
         char3 = hyos.characters.create!(name: 'Amaranta', age: 20)
         char4 = hyos.characters.create!(name: 'Úrsula Iguarán', age: 45)
 
@@ -78,7 +77,6 @@ RSpec.describe 'As a visitor' do
         visit "/novels/#{hyos.id}/characters"
         expect(page).to have_link("Sort A-Z")
         expect(char_2.name).to appear_before(char_4.name)
-
         click_link("Sort A-Z")
 
         expect(char_1.name).to appear_before(char_4.name)

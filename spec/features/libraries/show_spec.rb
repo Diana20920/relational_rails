@@ -16,7 +16,6 @@ RSpec.describe 'As a visitor', type: :feature do
       little_creek = Library.create!(name: 'Little Creek', current_employees: 20, online_membership: true)
 
       visit "/libraries/#{little_creek.id}"
-
       click_link 'Delete Library'
 
       expect(current_path).to eq("/libraries")

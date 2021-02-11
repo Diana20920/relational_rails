@@ -4,6 +4,7 @@ RSpec.describe Library do
   describe 'relationships' do
     it { should have_many :books }
   end
+
   describe "instance methods" do
     describe "#books_count" do
       it "returns a count of its books" do
@@ -14,6 +15,7 @@ RSpec.describe Library do
 
         expect(hogwarts.books_count).to eq(3)
       end
+
       it "returns 0 if library has no books" do
         hogwarts = Library.create!(name: 'Hogwarts', current_employees: 3)
         expect(hogwarts.books_count).to eq(0)
@@ -29,6 +31,7 @@ RSpec.describe Library do
         expect(hogwarts.given_limit(5).count).to eq(2)
         expect(hogwarts.given_limit(1).count).to eq(3)
       end
+
       it "returns no books if given treshold is more than copies_available" do
         hogwarts = Library.create!(name: 'Hogwarts', current_employees: 3)
         book1 = hogwarts.books.create!(title: 'Magic for Muggles', copies_available: 2, audio_book: true)
@@ -39,6 +42,7 @@ RSpec.describe Library do
       end
     end
   end
+
   describe "class methods" do
     describe "::sort_by_newest"  do
       it "orders libraries descending based on created_at attribute" do
