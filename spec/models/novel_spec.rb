@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Novel do
-  describe 'relationships'
+  describe 'relationships' do
   it { should have_many :characters }
 end
 describe "instance methods" do
@@ -43,6 +43,7 @@ describe "instance methods" do
       expect(hyos.given_limit(60).count).to eq(0)
     end
   end
+end
   describe "class methods" do
     describe "::sort_by_newest" do
       it "orders novels descending based on created_at attribute" do
