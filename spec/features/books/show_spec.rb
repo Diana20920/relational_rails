@@ -4,7 +4,6 @@ RSpec.describe 'As a visitor' do
   describe 'I visit the book show page' do
     it 'displays the one book and its attributes' do
       little_creek = Library.create!(name: 'Little Creek', current_employees: 20)
-
       book2 = little_creek.books.create!(title: 'Coding for Dummies', copies_available: 20)
 
       visit "/books/#{book2.id}"
@@ -18,7 +17,6 @@ RSpec.describe 'As a visitor' do
       book2 = little_creek.books.create!(title: 'Coding for Dummies', copies_available: 20)
 
       visit "/books/#{book2.id}"
-
       click_link "Delete Book"
 
       expect(current_path).to eq('/books')

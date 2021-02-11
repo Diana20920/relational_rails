@@ -4,7 +4,6 @@ class LibrariesController < ApplicationController
   end
 
   def new
-
   end
 
   def create
@@ -15,8 +14,8 @@ class LibrariesController < ApplicationController
       created_at: params[:library][:created_at],
       updated_at: params[:library][:updated_at]
       })
-      library.save
-      redirect_to '/libraries'
+    library.save
+    redirect_to '/libraries'
   end
 
   def show
@@ -37,8 +36,8 @@ class LibrariesController < ApplicationController
       created_at: params[:library][:created_at],
       updated_at: params[:library][:updated_at]
       })
-      library.save
-      redirect_to "/libraries/#{library.id}"
+    library.save
+    redirect_to "/libraries/#{library.id}"
   end
 
   def destroy

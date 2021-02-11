@@ -37,7 +37,6 @@ RSpec.describe 'As a visitor' do
 
       book1 = little_creek.books.create!(title: 'Ruby', copies_available: 3)
       book2 = little_creek.books.create!(title: 'Coding for Dummies', copies_available: 20)
-
       book3 = hogwarts.books.create!(title: 'Magic for Muggles', copies_available: 2)
       book4 = hogwarts.books.create!(title: 'Advanced Spells', copies_available: 6)
 
@@ -58,7 +57,6 @@ RSpec.describe 'As a visitor' do
       book2 = little_creek.books.create!(title: 'Coding for Dummies', copies_available: 20)
 
       visit "/libraries/#{little_creek.id}/books"
-
       fill_in "copies[number]", with: 10
       click_button "Only return books with more than amount of copies available"
 

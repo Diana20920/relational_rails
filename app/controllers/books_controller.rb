@@ -42,7 +42,6 @@ class BooksController < ApplicationController
   end
 
   def new
-
   end
 
   def create
@@ -54,7 +53,7 @@ class BooksController < ApplicationController
       updated_at: params[:book][:updated_at],
       created_at: params[:book][:created_at]
       })
-      book.save
-      redirect_to "/libraries/#{book.library_id}/books"
+    book.save
+    redirect_to "/libraries/#{book.library_id}/books"
   end
 end

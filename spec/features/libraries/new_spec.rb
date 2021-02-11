@@ -11,7 +11,6 @@ RSpec.describe 'New Library', type: :feature do
 
         fill_in 'library[name]', with: 'Library1'
         fill_in 'library[current_employees]', with: 5
-
         click_on "Create Library"
 
         expect(current_path).to eq("/libraries")

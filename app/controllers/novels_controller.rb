@@ -4,7 +4,6 @@ class NovelsController < ApplicationController
   end
 
   def new
-
   end
 
   def create
@@ -16,8 +15,8 @@ class NovelsController < ApplicationController
       created_at: params[:novel][:created_at],
       updated_at: params[:novel][:updated_at]
       })
-      novel.save
-      redirect_to '/novels'
+    novel.save
+    redirect_to '/novels'
   end
 
   def show
@@ -39,8 +38,8 @@ class NovelsController < ApplicationController
       created_at: params[:novel][:created_at],
       updated_at: params[:novel][:updated_at]
       })
-      novel.save
-      redirect_to "/novels/#{novel.id}"
+    novel.save
+    redirect_to "/novels/#{novel.id}"
   end
 
   def destroy

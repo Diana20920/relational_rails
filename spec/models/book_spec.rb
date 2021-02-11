@@ -15,6 +15,7 @@ RSpec.describe Book do
 
         expect(Book.all_true.count).to eq(2)
       end
+
       it "returns no books if audio_book column is false" do
         hogwarts = Library.create!(name: 'Hogwarts', current_employees: 3)
         book1 = hogwarts.books.create!(title: 'Magic for Muggles', copies_available: 2, audio_book: false)

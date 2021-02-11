@@ -17,7 +17,6 @@ RSpec.describe 'As a visitor' do
       char1 = moby_dick.characters.create(name: 'Captain Ahab', age: 45)
 
       visit "/characters/#{char1.id}"
-
       click_link "Delete Character"
 
       expect(current_path).to eq('/characters')
