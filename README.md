@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Paired Project: Relational Rails MOD2
 
-Things you may want to cover:
+#### Some specs
+* Ruby version 2.5.3
+* Rails 5.2.4.x
+* PostgreSQL
+* "Handroll" all routes
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Design Document 
+* [Jesus and Diana schema design doc](https://sqlspy.io/import_db_designer/c3B5LTI3ODMyOTMtMjA5ODgwNjQ2M2IzMWExMC0zOTI4MTY=)
